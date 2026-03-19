@@ -1,23 +1,22 @@
-import uuid
-from typing import TypedDict
+import json
+from typing import TypedDict, Callable
 from langchain.tools import tool
 from langchain.agents import create_agent
 from langchain.agents.middleware import ModelRequest, ModelResponse, AgentMiddleware
-from langchain.messages import SystemMessage
-from langgraph.checkpoint.memory import InMemorySaver
-from typing import Callable
+from langchain.messages import SystemMessage, HumanMessage
 
-# Define skill structure
+import sqlite3
+from langgraph.checkpoint.sqlite import SqliteSaver
+
 class Skill(TypedDict):
     """A skill that can be progressively disclosed to the agent."""
     name: str
     description: str
     content: str
 
-# Define skills with schemas and business logic
-skills: list[Skill] = []
+with open(f"skills/pid_{pid}_skills.json", "r", encoding="utf-8") as f:
+    skills = json.load(f)
 
-# Create skill loading tool
 @tool
 def load_skill(skill_name: str) -> str:
     """Load the full content of a skill into the agent's context.
@@ -29,16 +28,13 @@ def load_skill(skill_name: str) -> str:
     Args:
         skill_name: The name of the skill to load.
     """
-    # Find and return the requested skill
     for skill in skills:
         if skill["name"] == skill_name:
             return f"Loaded skill: {skill_name}\n\n{skill['content']}"
 
-    # Skill not found
     available = ", ".join(s["name"] for s in skills)
     return f"Skill '{skill_name}' not found. Available skills: {available}"
 
-# Create skill middleware
 class SkillMiddleware(AgentMiddleware):
     """Middleware that injects skill descriptions into the system prompt."""
 
@@ -76,46 +72,28 @@ class SkillMiddleware(AgentMiddleware):
         modified_request = request.override(system_message=new_system_message)
         return handler(modified_request)
 
-# Initialize your chat model (replace with your model)
-# Example: from langchain_anthropic import ChatAnthropic
-# model = ChatAnthropic(model="claude-3-5-sonnet-20241022")
-from langchain_openai import ChatOpenAI
-model = ChatOpenAI(model="gpt-4")
+from langchain.chat_models import init_chat_model
+model = init_chat_model(model="deepseek-chat")
 
-# Create the agent with skill support
+conn = sqlite3.connect("conversations.db", check_same_thread=False)
+checkpointer = SqliteSaver(conn)
+
 agent = create_agent(
     model,
-    system_prompt=(
-        "You are a SQL query assistant that helps users "
-        "write queries against business databases."
-    ),
+    system_prompt=SystemMessage("You are a helpful assistant."),
     middleware=[SkillMiddleware()],
-    checkpointer=InMemorySaver(),
+    checkpointer=checkpointer,
 )
 
-# Example usage
 if __name__ == "__main__":
-    # Configuration for this conversation thread
-    thread_id = str(uuid.uuid4())
+    thread_id = str(1)
     config = {"configurable": {"thread_id": thread_id}}
 
-    # Ask for a SQL query
     result = agent.invoke(
-        {
-            "messages": [
-                {
-                    "role": "user",
-                    "content": (
-                        "Write a SQL query to find all customers "
-                        "who made orders over $1000 in the last month"
-                    ),
-                }
-            ]
-        },
+        {"messages": [HumanMessage("你好，我是小明")]},
         config
     )
 
-    # Print the conversation
     for message in result["messages"]:
         if hasattr(message, 'pretty_print'):
             message.pretty_print()
