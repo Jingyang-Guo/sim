@@ -1,6 +1,8 @@
 # Customize
 data/
 persona_profiles/
+skills/
+text_questions/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

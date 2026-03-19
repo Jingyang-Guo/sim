@@ -182,10 +182,10 @@ def _recursively_extract_text_from_elements(elements_list: list, all_text_lines:
         if topic == "Demographics":
             if element.get("BlockName", "").strip() != "Demographics":
                 continue
-        elif topic == "Personality_traits":
+        elif topic == "Personality-traits":
             if element.get("BlockName", "").strip() != "Personality":
                 continue
-        elif topic == "Cognitive_abilities":
+        elif topic == "Cognitive-abilities":
             if element.get("BlockName", "").strip() not in ["Cognitive tests", "Forward Flow"]:
                 continue
         else: # Economic_preferences
