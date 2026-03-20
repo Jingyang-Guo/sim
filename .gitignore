@@ -2,7 +2,8 @@
 data/
 persona_profiles/
 skills/
-text_questions/
+questions/
+*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
