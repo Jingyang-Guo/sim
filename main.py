@@ -23,7 +23,7 @@ class Facet(TypedDict):
     description: str
     content: str
 
-async def simulate_persona(pid: int, input: str, facets: list[Facet], sem):
+async def simulate_persona(pid: int, input: str, facets: list[Facet], sem, checkpointer):
 
     @tool
     def retrieve_persona_facet(facet_name: str) -> str:
@@ -70,20 +70,16 @@ async def simulate_persona(pid: int, input: str, facets: list[Facet], sem):
     
     model = init_chat_model(model="deepseek-chat")
 
+    agent = create_agent(
+        model,
+        system_prompt=SystemMessage(system_prompt),
+        middleware=[FacetMiddleware()],
+        checkpointer=checkpointer,
+    )
+
+    config = {"configurable": {"thread_id": str(pid)}}
+
     async with sem:
-        conn = aiosqlite.connect("test.db", check_same_thread=False)
-        checkpointer = AsyncSqliteSaver(conn)
-
-        agent = create_agent(
-            model,
-            system_prompt=SystemMessage(system_prompt),
-            middleware=[FacetMiddleware()],
-            checkpointer=checkpointer,
-        )
-
-        config = {"configurable": {"thread_id": str(pid)}}
-
-        
         response = await agent.ainvoke(
             {"messages": [HumanMessage(input)]},
             config
@@ -106,12 +102,11 @@ async def main():
             input_list.append(f.read())
         with open(f"skills/{skills_file}", "r", encoding="utf-8") as f:
             skills_list.append(json.load(f))
-
-    input_list = input_list[:10]
-    skills_list = skills_list[:10]
     
-    sem = asyncio.Semaphore(5)
-    tasks = [simulate_persona(pid, input, skills, sem)
+    sem = asyncio.Semaphore(100)
+    conn = aiosqlite.connect("conversations.db", check_same_thread=False)
+    checkpointer = AsyncSqliteSaver(conn)
+    tasks = [simulate_persona(pid, input, skills, sem, checkpointer)
              for pid, (input, skills) in enumerate(zip(input_list, skills_list), start=1)]
 
     results = await tqdm.gather(*tasks, total=len(tasks), desc="Simulating personas")
