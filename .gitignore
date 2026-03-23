@@ -1,8 +1,7 @@
 # Customize
 data/
-persona_profiles/
 skills/
-questions/
+text_simulation/
 *.db
 
 # Byte-compiled / optimized / DLL files
