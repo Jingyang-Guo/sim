@@ -24,70 +24,70 @@
     ]
   },
   {
-    "Topic": "Personality-traits",
+    "Topic": "Personality traits",
     "Tasks": [
       {
-        "Task": "Big-5-personality-test",
+        "Task": "Big 5 personality test",
         "QuestionIDs": [
           "QID25"
         ]
       },
       {
-        "Task": "Need-for-cognition-scale",
+        "Task": "Need for cognition scale",
         "QuestionIDs": [
           "QID26"
         ]
       },
       {
-        "Task": "Agentic-vs-Communal-Values-scale",
+        "Task": "Agentic vs. Communal Values scale",
         "QuestionIDs": [
           "QID29"
         ]
       },
       {
-        "Task": "Consumer-Minimalism-scale",
+        "Task": "Consumer Minimalism scale",
         "QuestionIDs": [
           "QID35"
         ]
       },
       {
-        "Task": "Empathy-scale",
+        "Task": "Empathy scale",
         "QuestionIDs": [
           "QID232"
         ]
       },
       {
-        "Task": "Green-values-scale",
+        "Task": "Green values scale",
         "QuestionIDs": [
           "QID235"
         ]
       },
       {
-        "Task": "Social-Desirability-scale",
+        "Task": "Social Desirability scale",
         "QuestionIDs": [
           "QID27"
         ]
       },
       {
-        "Task": "Conscientiousness-scale",
+        "Task": "Conscientiousness scale",
         "QuestionIDs": [
           "QID30"
         ]
       },
       {
-        "Task": "Anxiety-scale",
+        "Task": "Anxiety scale",
         "QuestionIDs": [
           "QID125"
         ]
       },
       {
-        "Task": "Individualism-vs-Collectivism-scale",
+        "Task": "Individualism vs. Collectivism scale",
         "QuestionIDs": [
           "QID233"
         ]
       },
       {
-        "Task": "Selves-questionnaire",
+        "Task": "Selves questionnaire",
         "QuestionIDs": [
           "QID268",
           "QID269",
@@ -95,13 +95,13 @@
         ]
       },
       {
-        "Task": "Regulatory-Focus-scale",
+        "Task": "Regulatory Focus scale",
         "QuestionIDs": [
           "QID28"
         ]
       },
       {
-        "Task": "Tightwads-vs-Spendthrift-scale",
+        "Task": "Tightwads vs. Spendthrift scale",
         "QuestionIDs": [
           "QID31",
           "QID32",
@@ -110,7 +110,7 @@
         ]
       },
       {
-        "Task": "Depression-scale",
+        "Task": "Depression scale",
         "QuestionIDs": [
           "QID127",
           "QID126",
@@ -138,31 +138,31 @@
         ]
       },
       {
-        "Task": "Need-for-uniqueness-scale",
+        "Task": "Need for uniqueness scale",
         "QuestionIDs": [
           "QID234"
         ]
       },
       {
-        "Task": "Self-monitoring-scale",
+        "Task": "Self-monitoring scale",
         "QuestionIDs": [
           "QID236"
         ]
       },
       {
-        "Task": "Self-concept-clarity-scale",
+        "Task": "Self-concept clarity scale",
         "QuestionIDs": [
           "QID237"
         ]
       },
       {
-        "Task": "Need-for-closure-scale",
+        "Task": "Need for closure scale",
         "QuestionIDs": [
           "QID238"
         ]
       },
       {
-        "Task": "Maximization-scale",
+        "Task": "Maximization scale",
         "QuestionIDs": [
           "QID239"
         ]
@@ -170,10 +170,10 @@
     ]
   },
   {
-    "Topic": "Cognitive-abilities",
+    "Topic": "Cognitive abilities",
     "Tasks": [
       {
-        "Task": "Cognitive-Reflection-Test",
+        "Task": "Cognitive Reflection Test",
         "QuestionIDs": [
           "QID52",
           "QID53",
@@ -182,7 +182,7 @@
         ]
       },
       {
-        "Task": "Fluid-intelligence-test",
+        "Task": "Fluid intelligence test",
         "QuestionIDs": [
           "QID56",
           "QID57",
@@ -193,7 +193,7 @@
         ]
       },
       {
-        "Task": "Crystalized-intelligence-test",
+        "Task": "Crystallized intelligence test",
         "QuestionIDs": [
           "QID62",
           "QID63",
@@ -220,7 +220,7 @@
         ]
       },
       {
-        "Task": "Syllogisms-test",
+        "Task": "Syllogisms test",
         "QuestionIDs": [
           "QID278",
           "QID268",
@@ -237,14 +237,14 @@
         ]
       },
       {
-        "Task": "Overconfidence-and-Overplacement",
+        "Task": "Overconfidence and Overplacement",
         "QuestionIDs": [
           "QID123",
           "QID124"
         ]
       },
       {
-        "Task": "Financial-literacy-test",
+        "Task": "Financial literacy test",
         "QuestionIDs": [
           "QID36",
           "QID37",
@@ -257,7 +257,7 @@
         ]
       },
       {
-        "Task": "Numeracy-test",
+        "Task": "Numeracy test",
         "QuestionIDs": [
           "QID44",
           "QID45",
@@ -270,7 +270,7 @@
         ]
       },
       {
-        "Task": "Deductive-certainty-of-Modus-Ponens-test",
+        "Task": "Deductive certainty of Modus Ponens test",
         "QuestionIDs": [
           "QID217",
           "QID218",
@@ -279,13 +279,13 @@
         ]
       },
       {
-        "Task": "Forward-flow(free-associations)",
+        "Task": "Forward flow (free associations)",
         "QuestionIDs": [
           "QID10"
         ]
       },
       {
-        "Task": "Wason-Selection-Task",
+        "Task": "Wason Selection Task",
         "QuestionIDs": [
           "QID221"
         ]
@@ -293,10 +293,10 @@
     ]
   },
   {
-    "Topic": "Economic-preferences",
+    "Topic": "Economic preferences",
     "Tasks": [
       {
-        "Task": "Ultimatum-game",
+        "Task": "Ultimatum game",
         "QuestionIDs": [
           "QID224",
           "QID225",
@@ -308,7 +308,7 @@
         ]
       },
       {
-        "Task": "Mental-accounting",
+        "Task": "Mental accounting",
         "QuestionIDs": [
           "QID149",
           "QID150",
@@ -317,7 +317,7 @@
         ]
       },
       {
-        "Task": "Discount-and-Present-bias",
+        "Task": "Discount and Present bias",
         "QuestionIDs": [
           "QID243",
           "QID84",
@@ -329,7 +329,7 @@
         ]
       },
       {
-        "Task": "Risk-and-Loss-Aversion",
+        "Task": "Risk and Loss Aversion",
         "QuestionIDs": [
           "QID249",
           "QID250",
@@ -342,7 +342,7 @@
         ]
       },
       {
-        "Task": "Trust-game",
+        "Task": "Trust game",
         "QuestionIDs": [
           "QID117",
           "QID118",
@@ -355,7 +355,7 @@
         ]
       },
       {
-        "Task": "Dictator-game",
+        "Task": "Dictator game",
         "QuestionIDs": [
           "QID231",
           "QID275"
