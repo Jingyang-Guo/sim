@@ -363,8 +363,8 @@ def postprocess_simulation_outputs(simulation_output_dir, question_json_base_dir
     print(f"Postprocessing complete. Successful updates: {successful_updates}, Failed/Skipped: {failed_or_skipped}.")
 
 def postprocess_llm_response():
-  simulation_output_dir = pathlib.Path("text_simulation/text_simulation_output")
-  simulation_output_dir.mkdir(parents=True, exist_ok=True)
+    simulation_output_dir = pathlib.Path("text_simulation/text_simulation_output")
+    simulation_output_dir.mkdir(parents=True, exist_ok=True)
 
   # conn = sqlite3.connect("conversations.db", check_same_thread=False)
   # checkpointer = SqliteSaver(conn)
@@ -382,10 +382,10 @@ def postprocess_llm_response():
   #     json.dump(json_data, f, ensure_ascii=False)
   # conn.close()
 
-  question_json_base_dir = "./data/mega_persona_json/answer_blocks"
-  output_updated_questions_dir = os.path.join(simulation_output_dir, "answer_blocks_llm_imputed")
-  postprocess_simulation_outputs(simulation_output_dir, question_json_base_dir, output_updated_questions_dir)
+    question_json_base_dir = "./data/mega_persona_json/answer_blocks"
+    output_updated_questions_dir = os.path.join(simulation_output_dir, "answer_blocks_llm_imputed")
+    postprocess_simulation_outputs(simulation_output_dir, question_json_base_dir, output_updated_questions_dir)
 
   
 if __name__ == "__main__":
-  postprocess_llm_response()
+    postprocess_llm_response()
