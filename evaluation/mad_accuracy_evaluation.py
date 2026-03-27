@@ -769,4 +769,72 @@ def compute_mad_summary(csv_dir: str, output_excel_path: str, output_fig_path: s
 
 
 def main():
-    compute_mad_summary(csv_dir, output_excel, output_fig, title)
+    """
+    Main function for command-line usage.
+    """
+    parser = argparse.ArgumentParser(description="Compute MAD accuracy evaluation")
+    
+    # Support both old-style individual arguments and new config-based approach
+    parser.add_argument("--config", help="Path to YAML configuration file")
+    parser.add_argument("--csv-dir", help="Directory containing input CSV files")
+    parser.add_argument("--output-dir", help="Output directory for results")
+    parser.add_argument("--output-excel-filename", default="mad_accuracy_summary.xlsx", help="Output Excel filename")
+    parser.add_argument("--output-plot-filename", default="accuracy_dist.png", help="Output plot filename")
+    parser.add_argument("--plot-title", default="Task-Level Accuracy", help="Figure title")
+    parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
+    
+    # Legacy support for positional arguments
+    parser.add_argument("csv_dir", nargs="?", help="Directory containing input CSV files (legacy)")
+    parser.add_argument("output_excel", nargs="?", help="Output Excel file path (legacy)")
+    parser.add_argument("output_fig", nargs="?", help="Output figure file path (legacy)")
+    parser.add_argument("--title", help="Figure title (legacy)")
+    
+    args = parser.parse_args()
+    
+    # Handle config-based execution
+    if args.config:
+        with open(args.config, 'r') as f:
+            config = yaml.safe_load(f)
+        
+        # Extract paths from config with variable substitution
+        trial_dir = config.get('trial_dir', '')
+        csv_dir = os.path.join(trial_dir, 'csv_comparison', 'csv_formatted') if trial_dir else None
+        output_dir_template = config.get('evaluation', {}).get('output_dir', f"{trial_dir}/accuracy_evaluation")
+        output_dir = output_dir_template.replace('${trial_dir}', trial_dir) if trial_dir else 'accuracy_evaluation'
+        model_name = config.get('model_name', 'LLM')
+
+        # Create output directory
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Set output paths
+        output_excel = os.path.join(output_dir, args.output_excel_filename)
+        output_fig = os.path.join(output_dir, args.output_plot_filename)
+        title = args.plot_title.replace('LLM', model_name) if 'LLM' in args.plot_title else args.plot_title
+        
+        if args.verbose:
+            print(f"Config-based execution:")
+            print(f"  CSV directory: {csv_dir}")
+            print(f"  Output directory: {output_dir}")
+            print(f"  Model name: {model_name}")
+        
+        # Run main analysis
+        compute_mad_summary(csv_dir, output_excel, output_fig, title)
+    
+    # Handle CLI-based execution
+    elif args.csv_dir and args.output_dir:
+        os.makedirs(args.output_dir, exist_ok=True)
+        output_excel = os.path.join(args.output_dir, args.output_excel_filename)
+        output_fig = os.path.join(args.output_dir, args.output_plot_filename)
+        compute_mad_summary(args.csv_dir, output_excel, output_fig, args.plot_title)
+    
+    # Handle legacy positional arguments
+    elif args.csv_dir and args.output_excel and args.output_fig:
+        title = args.title or "Task-Level Accuracy"
+        compute_mad_summary(args.csv_dir, args.output_excel, args.output_fig, title)
+    
+    else:
+        parser.error("Either --config must be provided, or --csv-dir and --output-dir, or legacy positional arguments")
+
+
+if __name__ == "__main__":
+    main()
