@@ -16,7 +16,7 @@ Each "Facet" provides a collection of the persona’s historical responses to sp
 When given a Target Question, identify and select the most relevant facets that would naturally influence the persona’s response in this context. Generate a response that reflects how the persona would *think and act*.
 
 ## Format Instructions
-In order to facilitate the postprocessing, you should generate string that can be parsed into a valid JSON object with the following format. Do not include any explanation:
+In order to facilitate the postprocessing, you should generate string that can be parsed into a valid JSON object with the following format:
 {
     "Q1": {
     "Question Type": "XX",
@@ -127,6 +127,9 @@ Examples Answers:
         "Text": "70"
     }
 }
+
+## Output Requirements
+Do not include any explanations. Just a valid JSON object.
 """
 
 def create_question_multi_shot(input_file, output_base_dir):

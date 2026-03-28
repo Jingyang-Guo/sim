@@ -1,5 +1,5 @@
 input_dir: text_simulation\simulation_input_multi_shot
-max_personas: 10
+max_personas: 5
 model_identifier: deepseek-chat
 output_dir: text_simulation\simulation_output_multi_shot\deepseek-chat
 persona_dir: text_simulation\persona_facets

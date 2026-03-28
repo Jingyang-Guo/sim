@@ -32,17 +32,15 @@ import asyncio
 import os
 import aiofiles
 
-async def read_question(input_dir: str) -> list:
+def read_question(input_dir: str) -> list:
     questions = sorted(os.listdir(input_dir))
     
-    async def read_file(file_name):
+    def read_file(file_name):
         file_path = os.path.join(input_dir, file_name)
-        async with aiofiles.open(file_path, "r") as f:
-            return await f.read()
+        with open(file_path, "r", encoding="utf-8") as f:
+            return f.read()
 
-    tasks = [read_file(q) for q in questions]
-    question_text_list = await asyncio.gather(*tasks)
-    
+    question_text_list = [read_file(q) for q in questions]
     return question_text_list
 
 
@@ -98,7 +96,7 @@ async def simulate_persona_with_pid(model, pid: int, input_dir: str, facets: lis
         checkpointer=checkpointer,
     )
 
-    question_text_list = await read_question(input_dir)
+    question_text_list = read_question(input_dir)
 
     async def process_question(question_id, question_text):
         async with sem:
@@ -132,12 +130,12 @@ async def simulate_persona(model, config):
             persona_facets_list.append(json.load(f))
     
     sem = asyncio.Semaphore(config['semaphore'])
-    conn = aiosqlite.connect(config['save_path'], check_same_thread=False)
-    checkpointer = AsyncSqliteSaver(conn)
-    tasks = [simulate_persona_with_pid(model, pid, input_dir, facets, sem, checkpointer)
+    async with aiosqlite.connect(config['save_path'], check_same_thread=False) as conn:
+        checkpointer = AsyncSqliteSaver(conn)
+        tasks = [simulate_persona_with_pid(model, pid, input_dir, facets, sem, checkpointer)
              for pid, (input_dir, facets) in enumerate(zip(input_dir_list, persona_facets_list), start=1)]
+        results = await tqdm.gather(*tasks, total=len(tasks), desc="Simulating persona")
 
-    results = await tqdm.gather(*tasks, total=len(tasks), desc="Simulating persona")
     return results
 
 def process_response_text(response_text) -> dict:
