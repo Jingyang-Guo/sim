@@ -1,0 +1,402 @@
+[
+  {
+    "BlockCategory": "Demographics",
+    "Tasks": [
+      {
+        "TaskName": "Demographics",
+        "TaskDescription": "Provides foundational demographic details of the persona (e.g., age, gender, location, income). Use this data when simulating baseline identity traits, cultural context, or broad socio-economic characteristics.",
+        "QuestionIDs": [
+          "QID11",
+          "QID12",
+          "QID13",
+          "QID14",
+          "QID15",
+          "QID16",
+          "QID17",
+          "QID18",
+          "QID19",
+          "QID20",
+          "QID21",
+          "QID22",
+          "QID23",
+          "QID24"
+        ]
+      }
+    ]
+  },
+  {
+    "BlockCategory": "Personality traits",
+    "Tasks": [
+      {
+        "TaskName": "Big 5 personality test",
+        "TaskDescription": "Contains Big Five personality trait scores (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism). Use this data when simulating general personality-driven responses, social interactions, or emotional tendencies.",
+        "QuestionIDs": [
+          "QID25"
+        ]
+      },
+      {
+        "TaskName": "Need for cognition scale",
+        "TaskDescription": "Measures the persona's tendency to engage in and enjoy thinking. Use this data when simulating responses to complex arguments, detailed information processing, or analytical problem-solving tasks.",
+        "QuestionIDs": [
+          "QID26"
+        ]
+      },
+      {
+        "TaskName": "Agentic vs. Communal Values scale",
+        "TaskDescription": "Details the persona's orientation towards agency (self-enhancement, mastery) versus communion (connection, helping others). Use this data when simulating moral judgments, career choices, or social prioritization.",
+        "QuestionIDs": [
+          "QID29"
+        ]
+      },
+      {
+        "TaskName": "Consumer Minimalism scale",
+        "TaskDescription": "Reflects the persona's preference for minimal consumption and material simplicity. Use this data when simulating purchasing decisions, lifestyle choices, or attitudes toward material possessions.",
+        "QuestionIDs": [
+          "QID35"
+        ]
+      },
+      {
+        "TaskName": "Empathy scale",
+        "TaskDescription": "Measures the persona's capacity for empathy and perspective-taking. Use this data when simulating interpersonal reactions, responses to others' suffering, or prosocial behaviors.",
+        "QuestionIDs": [
+          "QID232"
+        ]
+      },
+      {
+        "TaskName": "Green values scale",
+        "TaskDescription": "Indicates the persona's commitment to environmentalism and sustainability. Use this data when simulating eco-friendly choices, political views on the environment, or purchasing of sustainable goods.",
+        "QuestionIDs": [
+          "QID235"
+        ]
+      },
+      {
+        "TaskName": "Social Desirability scale",
+        "TaskDescription": "Measures the persona's tendency to present themselves in a favorable light. Use this data when simulating survey responses, public behavior, or situations involving social pressure and conformity.",
+        "QuestionIDs": [
+          "QID27"
+        ]
+      },
+      {
+        "TaskName": "Conscientiousness scale",
+        "TaskDescription": "Focuses specifically on conscientiousness (organization, diligence). Use this data when simulating work habits, rule adherence, or long-term planning behaviors.",
+        "QuestionIDs": [
+          "QID30"
+        ]
+      },
+      {
+        "TaskName": "Anxiety scale",
+        "TaskDescription": "Details the persona's baseline anxiety levels and stress responses. Use this data when simulating reactions to uncertainty, high-pressure situations, or perceived threats.",
+        "QuestionIDs": [
+          "QID125"
+        ]
+      },
+      {
+        "TaskName": "Individualism vs. Collectivism scale",
+        "TaskDescription": "Measures cultural orientation toward individual autonomy versus group harmony. Use this data when simulating decisions involving family, community obligations, or personal independence.",
+        "QuestionIDs": [
+          "QID233"
+        ]
+      },
+      {
+        "TaskName": "Selves questionnaire",
+        "TaskDescription": "Details the persona's self-concept across different domains (ideal self, ought self). Use this data when simulating internal conflicts, goal-setting, or self-evaluative behaviors.",
+        "QuestionIDs": [
+          "QID268",
+          "QID269",
+          "QID270"
+        ]
+      },
+      {
+        "TaskName": "Regulatory Focus scale",
+        "TaskDescription": "Indicates whether the persona is promotion-focused (seeking gains) or prevention-focused (avoiding losses). Use this data when simulating motivational strategies, risk assessment, or goal pursuit.",
+        "QuestionIDs": [
+          "QID28"
+        ]
+      },
+      {
+        "TaskName": "Tightwads vs. Spendthrift scale",
+        "TaskDescription": "Measures the psychological pain of paying. Use this data when simulating spending habits, budgeting decisions, or reactions to prices and discounts.",
+        "QuestionIDs": [
+          "QID31",
+          "QID32",
+          "QID33",
+          "QID34"
+        ]
+      },
+      {
+        "TaskName": "Depression scale",
+        "TaskDescription": "Reflects the persona's depressive symptoms and mood baseline. Use this data when simulating energy levels, optimism/pessimism, or responses to negative events.",
+        "QuestionIDs": [
+          "QID127",
+          "QID126",
+          "QID128",
+          "QID129",
+          "QID130",
+          "QID131",
+          "QID132",
+          "QID133",
+          "QID134",
+          "QID136",
+          "QID137",
+          "QID138",
+          "QID139",
+          "QID240",
+          "QID140",
+          "QID141",
+          "QID142",
+          "QID143",
+          "QID144",
+          "QID145",
+          "QID146",
+          "QID147",
+          "QID148"
+        ]
+      },
+      {
+        "TaskName": "Need for uniqueness scale",
+        "TaskDescription": "Measures the persona's desire to differentiate themselves from others. Use this data when simulating fashion choices, adoption of novel products, or non-conformist behaviors.",
+        "QuestionIDs": [
+          "QID234"
+        ]
+      },
+      {
+        "TaskName": "Self-monitoring scale",
+        "TaskDescription": "Indicates how much the persona adapts their behavior to social situations. Use this data when simulating chameleon-like social behavior, public speaking, or interpersonal adaptability.",
+        "QuestionIDs": [
+          "QID236"
+        ]
+      },
+      {
+        "TaskName": "Self-concept clarity scale",
+        "TaskDescription": "Measures the stability and consistency of the persona's self-beliefs. Use this data when simulating identity crises, vulnerability to persuasion, or long-term behavioral consistency.",
+        "QuestionIDs": [
+          "QID237"
+        ]
+      },
+      {
+        "TaskName": "Need for closure scale",
+        "TaskDescription": "Reflects the persona's desire for firm answers and aversion to ambiguity. Use this data when simulating decision-making under uncertainty, stereotyping, or rigidity in beliefs.",
+        "QuestionIDs": [
+          "QID238"
+        ]
+      },
+      {
+        "TaskName": "Maximization scale",
+        "TaskDescription": "Measures the tendency to seek the best possible outcome (maximizing) versus settling for 'good enough' (satisficing). Use this data when simulating shopping behavior, job searching, or post-decision regret.",
+        "QuestionIDs": [
+          "QID239"
+        ]
+      }
+    ]
+  },
+  {
+    "BlockCategory": "Cognitive abilities",
+    "Tasks": [
+      {
+        "TaskName": "Cognitive Reflection Test",
+        "TaskDescription": "Assesses the persona's ability to override intuitive but incorrect responses with analytical reasoning. Use this data when simulating susceptibility to cognitive biases, heuristics, or fast vs. slow thinking.",
+        "QuestionIDs": [
+          "QID52",
+          "QID53",
+          "QID54",
+          "QID55"
+        ]
+      },
+      {
+        "TaskName": "Fluid intelligence test",
+        "TaskDescription": "Measures reasoning ability and novel problem-solving capability. Use this data when simulating learning new skills, adapting to unfamiliar situations, or solving abstract logic puzzles.",
+        "QuestionIDs": [
+          "QID56",
+          "QID57",
+          "QID58",
+          "QID59",
+          "QID60",
+          "QID61"
+        ]
+      },
+      {
+        "TaskName": "Crystallized intelligence test",
+        "TaskDescription": "Reflects acquired knowledge and vocabulary. Use this data when simulating verbal communication, trivia knowledge, or culturally specific problem-solving.",
+        "QuestionIDs": [
+          "QID62",
+          "QID63",
+          "QID64",
+          "QID65",
+          "QID66",
+          "QID67",
+          "QID68",
+          "QID69",
+          "QID70",
+          "QID71",
+          "QID72",
+          "QID73",
+          "QID74",
+          "QID75",
+          "QID76",
+          "QID77",
+          "QID78",
+          "QID79",
+          "QID81",
+          "QID82",
+          "QID83",
+          "QID80"
+        ]
+      },
+      {
+        "TaskName": "Syllogisms test",
+        "TaskDescription": "Measures logical deduction skills. Use this data when simulating formal reasoning, evaluation of arguments, or detecting logical fallacies.",
+        "QuestionIDs": [
+          "QID278",
+          "QID268",
+          "QID269",
+          "QID270",
+          "QID279",
+          "QID271",
+          "QID272",
+          "QID273",
+          "QID274",
+          "QID275",
+          "QID276",
+          "QID277"
+        ]
+      },
+      {
+        "TaskName": "Overconfidence and Overplacement",
+        "TaskDescription": "Indicates the persona's tendency to overestimate their abilities relative to others. Use this data when simulating risky predictions, self-assessments, or entrepreneurial decisions.",
+        "QuestionIDs": [
+          "QID123",
+          "QID124"
+        ]
+      },
+      {
+        "TaskName": "Financial literacy test",
+        "TaskDescription": "Measures knowledge of financial concepts (interest, inflation, risk). Use this data when simulating investment decisions, retirement planning, or debt management.",
+        "QuestionIDs": [
+          "QID36",
+          "QID37",
+          "QID38",
+          "QID39",
+          "QID40",
+          "QID41",
+          "QID42",
+          "QID43"
+        ]
+      },
+      {
+        "TaskName": "Numeracy test",
+        "TaskDescription": "Assesses mathematical and statistical reasoning abilities. Use this data when simulating responses to probabilities, risk percentages, or quantitative data interpretation.",
+        "QuestionIDs": [
+          "QID44",
+          "QID45",
+          "QID46",
+          "QID47",
+          "QID48",
+          "QID49",
+          "QID50",
+          "QID51"
+        ]
+      },
+      {
+        "TaskName": "Deductive certainty of Modus Ponens test",
+        "TaskDescription": "Measures understanding of basic conditional logic. Use this data when simulating strict logical inferences and rule-based decision making.",
+        "QuestionIDs": [
+          "QID217",
+          "QID218",
+          "QID219",
+          "QID220"
+        ]
+      },
+      {
+        "TaskName": "Forward flow (free associations)",
+        "TaskDescription": "Measures creativity and associative thinking. Use this data when simulating brainstorming, divergent thinking, or creative problem-solving.",
+        "QuestionIDs": [
+          "QID10"
+        ]
+      },
+      {
+        "TaskName": "Wason Selection TaskName",
+        "TaskDescription": "Assesses confirmation bias and conditional reasoning. Use this data when simulating hypothesis testing or rule verification behaviors.",
+        "QuestionIDs": [
+          "QID221"
+        ]
+      }
+    ]
+  },
+  {
+    "BlockCategory": "Economic preferences",
+    "Tasks": [
+      {
+        "TaskName": "Ultimatum game",
+        "TaskDescription": "Reflects preferences for fairness and willingness to punish unfairness at a personal cost. Use this data when simulating negotiations, reactions to perceived injustice, or spiteful behaviors.",
+        "QuestionIDs": [
+          "QID224",
+          "QID225",
+          "QID226",
+          "QID227",
+          "QID228",
+          "QID229",
+          "QID230"
+        ]
+      },
+      {
+        "TaskName": "Mental accounting",
+        "TaskDescription": "Measures how the persona categorizes and treats money subjectively. Use this data when simulating budgeting irrationalities, sunk-cost fallacies, or windfall spending.",
+        "QuestionIDs": [
+          "QID149",
+          "QID150",
+          "QID151",
+          "QID152"
+        ]
+      },
+      {
+        "TaskName": "Discount and Present bias",
+        "TaskDescription": "Indicates the persona's time preference and impulsivity (delay discounting). Use this data when simulating saving behavior, procrastination, or choices between immediate vs. future rewards.",
+        "QuestionIDs": [
+          "QID243",
+          "QID84",
+          "QID244",
+          "QID245",
+          "QID246",
+          "QID247",
+          "QID248"
+        ]
+      },
+      {
+        "TaskName": "Risk and Loss Aversion",
+        "TaskDescription": "Measures the persona's tolerance for risk and sensitivity to losses versus gains. Use this data when simulating gambling, insurance purchases, or investment risk-taking.",
+        "QuestionIDs": [
+          "QID249",
+          "QID250",
+          "QID251",
+          "QID252",
+          "QID276",
+          "QID277",
+          "QID278",
+          "QID279"
+        ]
+      },
+      {
+        "TaskName": "Trust game",
+        "TaskDescription": "Reflects the persona's baseline trust in strangers and trustworthiness (reciprocity). Use this data when simulating cooperative ventures, reliance on others, or betrayal aversion.",
+        "QuestionIDs": [
+          "QID117",
+          "QID118",
+          "QID119",
+          "QID120",
+          "QID121",
+          "QID122",
+          "QID271",
+          "QID272"
+        ]
+      },
+      {
+        "TaskName": "Dictator game",
+        "TaskDescription": "Measures pure altruism and unconditional generosity. Use this data when simulating charitable giving, tipping, or selfless resource distribution.",
+        "QuestionIDs": [
+          "QID231",
+          "QID275"
+        ]
+      }
+    ]
+  }
+]

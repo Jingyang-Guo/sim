@@ -1,0 +1,9 @@
+input_dir: text_simulation\simulation_input_multi_shot
+max_personas: 10
+model_identifier: deepseek-chat
+output_dir: text_simulation\simulation_output_multi_shot\deepseek-chat
+persona_dir: text_simulation\persona_facets
+save_path: text_simulation\simulation_output_multi_shot\deepseek-chat\deepseek-chat.db
+semaphore: 100
+simulation_type: multi_shot
+temperature: 1.0

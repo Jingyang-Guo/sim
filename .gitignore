@@ -1,7 +1,10 @@
 # Customize
 data/
 skills/
-text_simulation/
+text_simulation/simulation_input_one_shot
+text_simulation/simulation_input_multi_shot
+text_simulation/simulation_output_one_shot
+text_simulation/simulation_output_multi_shot
 *.db
 
 # Byte-compiled / optimized / DLL files
