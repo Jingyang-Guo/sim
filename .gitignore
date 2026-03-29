@@ -1,4 +1,5 @@
 # Customize
+cache/
 data/
 text_simulation/persona_facets
 text_simulation/simulation_input_one_shot

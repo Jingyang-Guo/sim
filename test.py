@@ -1,3 +1,0 @@
-a = {'a': 1, 'b': 2}
-b = {}
-print(len(a.keys()))
