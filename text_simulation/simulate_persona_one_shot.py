@@ -116,7 +116,10 @@ async def simulate_persona(model, config):
 async def simulate_persona_with_config(config):
     model = init_chat_model(
         model=config['model_identifier'],
-        temperature = config["temperature"]
+        temperature = config["temperature"],
+        base_url="http://localhost:8000/v1",
+        model_provider="openai",
+        extra_body={"chat_template_kwargs": {"enable_thinking": False}}
     )
 
     output_dir = config['output_dir']

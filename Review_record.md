@@ -1,0 +1,3 @@
+- fix1:
+  - 修改 simulate_persona_one_shot 的函数，添加 base_url 和 model_provider 参数
+  - 修改 simulate_persona_multi_shot 的函数，添加 base_url 和 model_provider 参数

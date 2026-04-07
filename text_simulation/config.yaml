@@ -1,9 +1,9 @@
-input_dir: text_simulation\simulation_input_multi_shot
-max_personas: 500
-model_identifier: deepseek-chat
-output_dir: text_simulation\simulation_output_multi_shot\deepseek-chat
-persona_dir: text_simulation\persona_facets
-save_path: text_simulation\simulation_output_multi_shot\deepseek-chat\deepseek-chat.db
+input_dir: /home/gaoweichao/gjy/sim/text_simulation/simulation_input_multi_shot
+max_personas: 2058
+model_identifier: qwen3.5_9b
+output_dir: /home/gaoweichao/gjy/sim/text_simulation/simulation_output_multi_shot/qwen3.5_9b
+persona_dir: /home/gaoweichao/gjy/sim/text_simulation/persona_facets
+save_path: /home/gaoweichao/gjy/sim/text_simulation/simulation_output_multi_shot/qwen3.5_9b/qwen3.5_9b.db
 semaphore: 100
 simulation_type: multi_shot
 temperature: 1.0
